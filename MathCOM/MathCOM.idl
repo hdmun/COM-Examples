@@ -1,0 +1,35 @@
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(767C61E7-68D6-459C-9540-81458F2B626E),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IMathCOM : IDispatch
+{
+	HRESULT Sum( int x, int y, [out, retval] int* pRet );
+	HRESULT Div( int numerator, int denominator, [out, retval] float* pRet );
+	HRESULT Sqrt( int x, [out, retval] float* pRet );
+	HRESULT Pow( int x, int y, [out, retval] float* pRet );
+};
+
+[
+	uuid(49793CD2-51B0-410B-AC7B-12700C372231),
+	version(1.0),
+]
+library mathcomlib
+{
+	importlib("stdole2.tlb");
+
+	[
+		uuid(D74170BC-D924-4312-AAF3-3EB619F8C6CD)
+	]
+	coclass MathCOM
+	{
+		[default] interface IMathCOM;
+	};
+};
