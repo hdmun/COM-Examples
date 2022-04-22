@@ -1,18 +1,11 @@
 #pragma once
+#include "math_interface.h"
 
-#ifdef DLL_EXPORT
-#define DLL_DECLSPEC  __declspec(dllexport)
-#else
-#define DLL_DECLSPEC  __declspec(dllimport)
-#endif
-
-class DLL_DECLSPEC CMathDLL
+class CMathDLL : public IMathDLL
 {
 public:
-	int Sum( int x, int y );
-	float Div( int numerator, int denominator );
-	float Sqrt( int x );
-	float Pow( int x, int y );
+	virtual int Sum( int x, int y );
+	virtual float Div( int numerator, int denominator );
+	virtual float Sqrt( int x );
+	virtual float Pow( int x, int y );
 };
-
-DLL_DECLSPEC CMathDLL* CreateInstance();

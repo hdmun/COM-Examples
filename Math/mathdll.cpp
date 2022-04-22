@@ -23,7 +23,7 @@ float CMathDLL::Pow( int x, int y )
 }
 
 
-CMathDLL* CreateInstance()
+IMathDLL* CreateInstance()
 {
 	return new CMathDLL;
 }

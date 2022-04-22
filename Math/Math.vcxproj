@@ -86,6 +86,7 @@
   <ItemGroup>
     <ClInclude Include="framework.h" />
     <ClInclude Include="mathdll.h" />
+    <ClInclude Include="math_interface.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
